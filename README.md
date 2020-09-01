@@ -23,3 +23,7 @@ Clone repository from https://github.com/jfisher396/password-generator, make cha
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+## Contact Information:
+    *GitHub Username: jfisher396
+    *GitHub Email: jfisher396@hotmail.com
+
