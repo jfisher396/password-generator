@@ -1,4 +1,4 @@
-//character set strings
+//variables for password creation user choices
 const generateBtn = document.querySelector("#generate");
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -6,6 +6,7 @@ let numbers = "1234567890";
 let specChar = "@%+\\/'!#$^?:,~-_.";
 let finalPassword = "";
 
+//a function to prompt the user for their password character choices and return those choices to use later.
 function passwordOptions() {
   var passwordLength = parseInt(prompt("How many characters would you like to use between 8 and 128?"));
 
@@ -33,7 +34,7 @@ function passwordOptions() {
 
   }
 }
-
+//a function to take the user choices and create a random password based on those choices
 function genPassword() {
   var game = passwordOptions();
   let userChoice = "";
@@ -55,12 +56,12 @@ function genPassword() {
     console.log(finalPassword);
   }
 }
-
+//A function to take the randomly generated password and write it to the page
 function writePassword() {
   genPassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = finalPassword;
 }
-
+//Allows for a button click to start the process of creating a password.
 generateBtn.addEventListener("click", writePassword);
