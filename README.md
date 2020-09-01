@@ -1,2 +1,2 @@
 # password-generator
-I created a random password generator that uses lowercase and uppercase letters, numbers 0-9 and special characters @%+\\/'!#$^?:,~-_..  I am still working on trying to get it to only accept numbers between 8 and 128 as an input but it will still only generate passwords between 8 and 128 characters.
+I created a random password generator that uses lowercase and uppercase letters, numbers 0-9 and special characters @%+\\/'!#$^?:,~-_..
