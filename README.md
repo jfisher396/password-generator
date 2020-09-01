@@ -13,7 +13,7 @@ SO THAT I can create a strong password that provides greater security
 ```
 ## Visuals
 
-![GitHub Logo](/media/password generator.png)
+![GitHub Logo](/media/passwordGenerator.png)
 
 ## Contributing
 
