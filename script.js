@@ -1,67 +1,81 @@
-//variables for password creation user choices
 const generateBtn = document.querySelector("#generate");
-let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let numbers = "1234567890";
-let specChar = "@%+\\/'!#$^?:,~-_.";
-let finalPassword = "";
 
-//a function to prompt the user for their password character choices and return those choices to use later.
+//arrays of upper and lower case letters
+const upperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+//array of numbers and special characters
+const numericChars = [0,1,2,3,4,5,6,7,8,9];
+const specChars = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+
+
+//have the generate button ask about the different types of characters to use
 function passwordOptions() {
-  var passwordLength = parseInt(prompt("How many characters would you like to use between 8 and 128?"));
+  let passwordLength = parseInt(
+    prompt("How many characters would you like to use between 8 and 128?")
+  );
 
-  if (passwordLength >= 8 && passwordLength <= 128) {
-    let lower = confirm("Would you like to use lowercase letters?");
-
-    let upper = confirm("Would you like to use uppercase letters?");
-
-    let digits = confirm("Would you like to use numbers?");
-
-    let spec = confirm("Would you like to use special characters?");
+  if (passwordLength > 7 && passwordLength < 129) {
+    let uppers = confirm("Would you like to use uppercase letters?");
+    let lowers = confirm("Would you like to use lowercase letters?");
+    let nums = confirm("Would you like to use numbers?");
+    let specials = confirm("Would you like to use special characters?");
 
     let options = {
       strength: passwordLength,
-      lower,
-      upper,
-      digits,
-      spec,
+      uppers: uppers,
+      lowers: lowers,
+      nums: nums,
+      specials: specials,
     };
-
+    //Sends the user password options out to generatePassword()
     return options;
-    
+
   } else {
     alert("Please enter a number between 8 and 128");
+  }
+}
 
-  }
-}
-//a function to take the user choices and create a random password based on those choices
-function genPassword() {
-  var game = passwordOptions();
+  
+function generatePassword() {
+  //calls in the user choices from passwordOptions()
+  let userPasswordChoices = passwordOptions();
   let userChoice = "";
-  if (game.spec === true) {
-    userChoice += specChar;
+  let password = "";
+
+  if (userPasswordChoices.uppers) {
+    userChoice += upperCaseLetters.join("");
   }
-  if (game.digits === true) {
-    userChoice += numbers;
+  if (userPasswordChoices.lowers) {
+    userChoice += lowerCaseLetters.join("");
   }
-  if (game.lower === true) {
-    userChoice += lowerCase;
+  if (userPasswordChoices.nums) {
+    userChoice += numericChars.join("");
   }
-  if (game.upper === true) {
-    userChoice += upperCase;
+  if (userPasswordChoices.specials) {
+    userChoice += specChars.join("");
   }
-  for (let i = 0; i < game.strength; i++) {
+
+  for (let i = 0; i < userPasswordChoices.strength; i++) {
     let random = Math.floor(Math.random() * userChoice.length);
-    finalPassword += userChoice.charAt(random);
-    console.log(finalPassword);
+    password += userChoice.charAt(random);
   }
+
+  return password;
 }
-//A function to take the randomly generated password and write it to the page
+  
+
+
+
+// Write password to the #password input
 function writePassword() {
-  genPassword();
+  console.log(generatePassword)
+  const finalPassword = generatePassword();
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = finalPassword;
 }
-//Allows for a button click to start the process of creating a password.
+
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
