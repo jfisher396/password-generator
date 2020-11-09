@@ -1,6 +1,6 @@
 # Password Generator
 
-An application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+An application that generates a random password based on user-selected criteria. 
 
 [A deployed version can be viewed here.](/media/passwordGenerator.png)
 
@@ -18,7 +18,7 @@ An application that generates a random password based on user-selected criteria.
 
 ### About
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
 ### User Story
 
