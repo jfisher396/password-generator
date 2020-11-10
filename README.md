@@ -2,7 +2,7 @@
 
 An application that generates a random password based on user-selected criteria. 
 
-[A deployed version can be viewed here.](/media/passwordGenerator.png)
+[A deployed version can be viewed here.](https://jfisher396.github.io/password-generator/)
 
 ## Contents
 
