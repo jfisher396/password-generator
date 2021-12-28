@@ -69,7 +69,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  console.log(generatePassword)
+  // console.log(generatePassword)
   const finalPassword = generatePassword();
 
   var passwordText = document.querySelector("#password");
